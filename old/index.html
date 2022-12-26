@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <link rel="styleheet" href="css/style.css">
+        <script src="script/majeon.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">    </head>
+    <body>
+        <div class="container">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+              <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <image class="bi me-2" src="majeon_logo.jpg" width="40" height="32" role="img" aria-label="majeon"></image>
+              </a>
+        
+              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 link-secondary">홈</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">급식</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">날씨</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+              </ul>
+            </header>
+          </div>
+        </div>
+
+          <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light majeon-image">
+            
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+              <h1 class="display-4 fw-normal">학우미</h1>
+              <p class="lead fw-normal">학우미는 마전고등학교 재학중인 학생들 위해 만들어진 학교 도우미입니다.</p>
+              <a class="btn btn-outline-secondary" href="#">급식표  보기</a>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+          </div>
+          <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">급식표</h1>
+              <p class="col-md-8 fs-4">오늘의 급식표를 확인해보세요.</p>
+              <button class="btn btn-primary btn-lg" type="button" onclick="movePlanPlanner()">급식표 확인하러 가기</button>
+            </div>
+          </div>
+          <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+              <div class="h-100 p-5 text-bg-dark rounded-3">
+                <h2>마전고 주변 날씨 확인하기</h2>
+                <p>마전고 주변에 날씨가 어떤지를 확인해줍니다.</p>
+                <button class="btn btn-outline-light" type="button">날씨 확인하러 가기</button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="h-100 p-5 bg-light border rounded-3">
+                <h2>시간표</h2>
+                <p>오늘의 시간표나 이번 주의 시간표를 보여줍니다.</p>
+                <button class="btn btn-outline-secondary" type="button">시간표를 보러가기</button>
+              </div>
+            </div>
+          </div>
+
+    </body>
+</html>
