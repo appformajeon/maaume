@@ -1,10 +1,8 @@
-import './App.css';
-
-import Button from 'react-bootstrap/Button';
 import { Container } from 'react-bootstrap';
-function App() {
-  return (
-    <>
+
+export default function Root() {
+    return (
+        <>
     <Container>
       <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
@@ -49,7 +47,5 @@ function App() {
     </Container>
     
     </>
-  );
+    )
 }
-
-export default App;
