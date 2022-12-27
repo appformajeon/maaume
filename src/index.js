@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Root from "./routes/root"
-import MenuPlanner from './routes/menuPlanner';
 import reportWebVitals from './reportWebVitals';
+import MenuPlanner from "./routes/menuPlanner";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {createRoot } from "react-dom/client";
 import { createBrowserRouter,RouterProvider,Route,Link } from 'react-router-dom';

@@ -1,5 +1,4 @@
 import './App.css';
-
 import Button from 'react-bootstrap/Button';
 import { Container } from 'react-bootstrap';
 function App() {
@@ -47,7 +46,6 @@ function App() {
       © 학우미 2022
     </footer>
     </Container>
-    
     </>
   );
 }
