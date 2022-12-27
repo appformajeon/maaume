@@ -1,0 +1,17 @@
+.plan_table * {
+    font-size: 1vmix;
+    word-break: keep-all;
+    
+    
+}
+.plan_table {
+    table-layout: 'fixed' ;
+}
+@media all and (max-width: 768px) {
+    .plan_table * {
+        font-size: 1.8vmax;
+        word-break: keep-all;
+        
+        
+    }
+}
