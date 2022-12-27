@@ -1,13 +1,15 @@
 
 // import request from 'request';
 // function getAPI() {
-
+    import Table from 'react-bootstrap/Table';
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useIsRTL } from "react-bootstrap/esm/ThemeProvider";
 import axios from 'axios'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 //     const key = 'a0936c9a416d4518871b9c12273ae914'
 
@@ -61,55 +63,91 @@ fetchPost();
 
     const getMenu = (result) => {
         var temp_menus = []
-        result.mealServiceDietInfo[1].row.forEach((value) => {
-            const DDISH_NM = value.DDISH_NM;
-            const MLSV_YMD = value.MLSV_YMD;
-            const CAL_INFO = value.CAL_INFO;
-
-            var menu = {
-                "food": DDISH_NM.split('<br/>'),
-                "time": new Date(MLSV_YMD.slice(0, 4) + '-' + MLSV_YMD.slice(4, 6) + '-' + MLSV_YMD.slice(6, 8)),
-                "kcal": CAL_INFO
-            }
-
-            temp_menus.push(menu);
-        });
+        try {
+            result.mealServiceDietInfo[1].row.forEach((value) => {
+                const DDISH_NM = value.DDISH_NM;
+                const MLSV_YMD = value.MLSV_YMD;
+                const CAL_INFO = value.CAL_INFO;
+    
+                var menu = {
+                    "food": DDISH_NM.split('<br/>'),
+                    "time": new Date(MLSV_YMD.slice(0, 4) + '-' + MLSV_YMD.slice(4, 6) + '-' + MLSV_YMD.slice(6, 8)),
+                    "kcal": CAL_INFO
+                }
+    
+                temp_menus.push(menu);
+            });
+            
+        } catch (error) {
+            console.log(error)
+        }
        return temp_menus
     }
     const loadMenu = (result) => {
-        if (result != {}) {
+        console.log(result)
             const menus =   getMenu(result)
             return (
                 <>
-                    <Container fluid>
-                        <Row >
-                            {menus.map(d => (<Col>
+                    <Table>
+                        <thead>
+                            <tr>
+                            <th>
+                                급식
+                            </th>
+                            {menus.map(d => (<th>
                                 {d.time.getMonth()}월 {d.time.getDate()}일
-                            </Col>))}
-                        </Row>
-                        <Row>
+                            </th>))}
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>
+                                칼로리
+                            </th>
+                            {menus.map(m => (<>
+                            <th>
+                                {foodToHTML(m.food)}
+                            </th>
+                            </>))}
+                          </tr>
+                                <tr>
+                                    {menus.map(m => (<>
+                                    <th>
+                                        {m.kcal}
+                                    </th>
+                                    </>))}
+                                </tr>
+                            {/* <td>
                             {menus.map(d => (
                                 <Col>
                                     {foodToHTML(d.food)}
                                 </Col>
                             ))}
-                        </Row>
-                        <Row>
+
+                            </td>
+                            <td>
                             {menus.map(d => (<Col>
                                 {d.kcal}</Col>))}
-                        </Row>
-                    </Container>
+
+                            </td> */}
+                            
+                        </tbody>
+                    </Table>
                 </>
             )
-
-        }
-        else {
-            return null
-        }
     }
     return (
         <>
-            <input type="week"></input>
+            <Form>
+                <Form.Group>
+                    <Form.Control type="week" onChange={
+                        console.log(this.value)
+                    }>
+
+                    </Form.Control>
+                </Form.Group>
+                </Form>
             <Container>
                 {loadMenu(json)}
             </Container>
